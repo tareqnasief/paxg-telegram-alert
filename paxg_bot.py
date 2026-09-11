@@ -10,7 +10,7 @@ STEP = 100
 
 
 def get_price():
-    url = "https://api.binance.com/api/v3/ticker/price"
+    url = "https://api1.binance.com/api/v3/ticker/price"
     response = requests.get(
         url,
         params={"symbol": SYMBOL},

@@ -10,12 +10,14 @@ STEP = 100
 
 
 def get_price():
-  url = "https://api-gcp.binance.com/api/v3/ticker/price"
+    url = "https://api-gcp.binance.com/api/v3/ticker/price"
+
     response = requests.get(
         url,
         params={"symbol": SYMBOL},
         timeout=10
     )
+
     response.raise_for_status()
     return float(response.json()["price"])
 

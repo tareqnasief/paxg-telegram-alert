@@ -25,7 +25,6 @@ def get_price():
     data = response.json()
     return float(data["pax-gold"]["usd"])
 
-
 def send_telegram(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
 
@@ -37,6 +36,8 @@ def send_telegram(message):
         },
         timeout=10
     )
+
+    print("Telegram response:", response.text)
 
     response.raise_for_status()
 
